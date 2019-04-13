@@ -4,6 +4,4 @@ python:
 install:
   - pip install -e .[dev]
 script:
-  - ls -al
-  - cd chaos-loader
-  - python setup.py. test
+  - python setup.py test
