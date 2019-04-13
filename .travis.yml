@@ -12,7 +12,6 @@ jobs:
         - '3.6'
       install:
         - pip install -e .[dev]
-        - python setup.py sdist
       script:
         - python setup.py test
     - stage: release
@@ -26,6 +25,9 @@ jobs:
       language: python
       python:
         - '3.6'
+      install:
+        - pip install .
+        - python setup.py sdist
       deploy:
         provider: pypi
         user: "$PYPI_USER"
