@@ -1,3 +1,8 @@
+stages:
+  - test
+  - release
+  - deploy
+
 node_js:
   - '8'
 
@@ -22,6 +27,7 @@ jobs:
       script:
         - npx semantic-release
     - stage: deploy
+      if: tag IS present
       language: python
       python:
         - '3.6'
