@@ -9,6 +9,7 @@ dev_dependencies = [
     'behave==1.2.6',
     'pytest==3.5.0',
     'semver==2.7.9',
+    'flake8==3.7.7',
 ]
 
 setup(
