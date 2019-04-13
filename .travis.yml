@@ -17,9 +17,7 @@ jobs:
       deploy:
         provider: script
         skip_cleanup: true
-        script:
-          - nvm install lts/*
-          - npx semantic-release
+        script: nvm install lts/* && npx semantic-release
         on:
           branch: master
     - stage: "Deploy"
