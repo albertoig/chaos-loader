@@ -22,7 +22,7 @@ setup(
     version='1.0.0',
     description='Chaos loader command line',
     author='Alberto Iglesias Gallego',
-    url='git@github.com:albertoig/chaos-loader.git',
+    url='https://github.com/albertoig/chaos-loader',
     packages=find_packages(exclude=['*tests']),
     include_package_data=True,
     install_requires=dependencies,
