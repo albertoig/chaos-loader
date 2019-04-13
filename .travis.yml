@@ -3,6 +3,7 @@ python:
   - "3.6"
 install:
   - pip install -e .[dev]
+  - python setup.py sdist
 script:
   - python setup.py test
 
