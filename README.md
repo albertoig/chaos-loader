@@ -1,2 +1,3 @@
+[![CircleCI](https://circleci.com/gh/albertoig/chaos-loader.svg?style=svg)](https://circleci.com/gh/albertoig/chaos-loader)
 # chaos-loader
 Chaos loader is ...
