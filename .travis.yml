@@ -1,26 +1,26 @@
-matrix:
+node_js:
+  - '8'
+
+python:
+  - '3.6'
+
+jobs:
   include:
-    - language: python
-      python:
-      - '3.6'
+    - stage: test
+      python: '3.6'
       install:
-      - pip install -e .[dev]
-      - python setup.py sdist
+        - pip install -e .[dev]
+        - python setup.py sdist
       script:
-      - python setup.py test
-
-    - language: node_js
-      node_js:
-      - '8'
-      script:
-      - npx semantic-release
-
-    - language: python
-      python:
-      - '3.6'
+        - python setup.py test
+    - stage: release
+      node_js: '8'
       install:
-      - pip install -e
-      - python setup.py sdist
+        - npm install conventional-changelog-eslint
+      script:
+        - npx semantic-release
+    - stage: deploy
+      python: '3.6'
       deploy:
         provider: pypi
         user: "$PYPI_USER"
