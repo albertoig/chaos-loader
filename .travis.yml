@@ -1,16 +1,15 @@
 language: python
 python:
-  - "3.6"
+- '3.6'
 install:
-  - pip install -e .[dev]
-  - python setup.py sdist
+- pip install -e .[dev]
+- python setup.py sdist
 script:
-  - python setup.py test
-
+- python setup.py test
 deploy:
   provider: pypi
-  user: $PYPI_USER
+  user: "$PYPI_USER"
   password:
-    secure: $PYPI_PASSWORD
+    secure: lh85QR/jzP7Y/Bw9dQ7LchOagkWyEovkDxXzgevlkS/4CUTRtDu+khSgAUDRRQ88GfSMQRitd58x5XyID8Ad1d5EL3t3pbPxW6RPcgwxOcTmWIBHUKf96zc1RBxRN5uF+YfF847vIwi+W3XsvxdHuENBu4fi5QSzgKQpMN0Iy1pXFwapqYLOwbQiPRFEHL1OllR6Qz6pOVt9LmpcwghVbone3cWAwDkvdUbj55b4mw41jWA7NsOWkM/HU+UNNppcqHOd/Gh/1jEke6c2BrflZCjQQ4wnv/HYAIf86b4O6HNXaDArSVwBNTdv8kbPHrZb0RSSu0epu56QRXGsLOHSvMhHzfn7U1VogY+zIsKMQbVgy6RieWUyZ+sJAznHZMuM7qbHujJAMQpI7MOjx4RxEicjCip/MAowJyiPtchP/N+SbP64RjZRIUAb3qGRXcgSNPy5mCKJ+Wi4r6qQcKnYJ+ve5iIsNfzARw7nX2OHnriWdFEuLtVZQTsGyuAA1l0b7qvsPpis/jRxUDnpXQhD8EA472zaXbPmwjphTw/FZzJciTNmt5DDgbR1u0ahL+2ePb6mWyl46zd0aGiqgYgFIkF3VV5x2MIEsCgK64HQB4kYRN1Tkpxsy468rM8WF/l8d2gVw39PXIcswRQ3dxywhrsxpKO42684As/ludHEHIA=
   on:
     branch: master
