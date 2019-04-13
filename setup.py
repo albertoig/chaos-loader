@@ -1,4 +1,7 @@
-from setuptools import setup, find_packages
+from setuptools import find_packages
+from distutils.core import setup
+from chaosloader.test.pytest import PyTest
+
 
 dependencies = [
     'click==7.0',
@@ -10,12 +13,15 @@ dev_dependencies = [
     'pytest==3.5.0',
     'semver==2.7.9',
     'flake8==3.7.7',
+    'pytest-runner',
+    'pytest'
 ]
 
 setup(
-    name='chaos-loader',
+    name='chaosloader',
     version='1.0.0',
     description='Chaos loader command line',
+    author='Alberto Iglesias Gallego',
     url='git@github.com:albertoig/chaos-loader.git',
     packages=find_packages(exclude=['*tests']),
     include_package_data=True,
@@ -27,5 +33,11 @@ setup(
         'pytest-runner',
     ],
     tests_require=dev_dependencies,
-    test_suite='test.unittest'
+    test_suite='test.unittest',
+    entry_points='''
+        [console_scripts]
+        chaosloader=chaosloader.src.cli:cli
+    ''',
+    py_modules=['chaosloader'],
+    cmdclass={'test': PyTest},
 )
