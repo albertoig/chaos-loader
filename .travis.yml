@@ -12,6 +12,16 @@ jobs:
       name: "Unit Tests"
       script:
         - python setup.py test
+    - stage: "Release"
+      name: "Semantic release"
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script:
+          - nvm install lts/*
+          - npx semantic-release
+        on:
+          branch: master
     - stage: "Deploy"
       name: "Deploy to Pypi"
       deploy:
