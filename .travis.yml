@@ -1,29 +1,26 @@
-language: python
-python:
-- '3.6'
-install:
-- pip install -e .[dev]
-- python setup.py sdist
-script:
-- python setup.py test
-env:
-  - NODE_VERSION="8"
-jobs:
+matrix:
   include:
-    - stage: "Tests"
-      name: "Unit Tests"
+    - language: python
+      python:
+      - '3.6'
+      install:
+      - pip install -e .[dev]
+      - python setup.py sdist
       script:
-        - python setup.py test
-    - stage: "Release"
-      name: "Semantic release"
-      deploy:
-        provider: script
-        skip_cleanup: true
-        script: source ~/.nvm/nvm.sh && nvm install lts/* && npx semantic-release
-        on:
-          branch: master
-    - stage: "Deploy"
-      name: "Deploy to Pypi"
+      - python setup.py test
+
+    - language: node_js
+      node_js:
+      - '8'
+      script:
+      - npx semantic-release
+
+    - language: python
+      python:
+      - '3.6'
+      install:
+      - pip install -e
+      - python setup.py sdist
       deploy:
         provider: pypi
         user: "$PYPI_USER"
