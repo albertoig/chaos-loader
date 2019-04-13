@@ -19,7 +19,10 @@ dev_dependencies = [
 
 setup(
     name='chaosloader',
-    version='{tag}',
+    version_config={
+        "version_format": "{tag}",
+        "starting_version": "1.0.0"
+    },
     description='Chaos loader command line',
     author='Alberto Iglesias Gallego',
     url='https://github.com/albertoig/chaos-loader',
