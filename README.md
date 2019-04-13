@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/albertoig/chaos-loader.svg?style=svg)](https://circleci.com/gh/albertoig/chaos-loader)
+[![Build Status](https://travis-ci.org/albertoig/chaos-loader.svg?branch=master)](https://travis-ci.org/albertoig/chaos-loader)
 # chaos-loader
 Chaos loader is a mono repository organizer to make a project easy to develop under a docker based project.
 
