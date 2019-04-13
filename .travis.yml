@@ -6,6 +6,8 @@ install:
 - python setup.py sdist
 script:
 - python setup.py test
+env:
+  - NODE_VERSION="8"
 jobs:
   include:
     - stage: "Tests"
@@ -17,7 +19,7 @@ jobs:
       deploy:
         provider: script
         skip_cleanup: true
-        script: nvm install lts/* && npx semantic-release
+        script: source ~/.nvm/nvm.sh && nvm install lts/* && npx semantic-release
         on:
           branch: master
     - stage: "Deploy"
