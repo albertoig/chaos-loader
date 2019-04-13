@@ -16,14 +16,16 @@ jobs:
       script:
         - python setup.py test
     - stage: release
+      language: node_js
       node_js: '8'
       install:
         - npm install conventional-changelog-eslint
       script:
         - npx semantic-release
     - stage: deploy
+      language: python
       python:
-        - '3.7'
+        - '3.6'
       deploy:
         provider: pypi
         user: "$PYPI_USER"
