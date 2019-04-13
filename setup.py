@@ -19,7 +19,7 @@ dev_dependencies = [
 
 setup(
     name='chaosloader',
-    version='1.0.0',
+    version='{tag}',
     description='Chaos loader command line',
     author='Alberto Iglesias Gallego',
     url='https://github.com/albertoig/chaos-loader',
@@ -31,7 +31,7 @@ setup(
         'dev': dev_dependencies
     },
     setup_requires=[
-        'pytest-runner',
+        'pytest-runner', 'better-setuptools-git-version'
     ],
     tests_require=dev_dependencies,
     test_suite='test.unittest',
