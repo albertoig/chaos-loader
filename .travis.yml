@@ -25,10 +25,7 @@ jobs:
       language: python
       python:
         - '3.6'
-      branches:
-        only:
-          - master
-      install:
+      before_deploy::
         - pip install .
         - python setup.py sdist
       deploy:
